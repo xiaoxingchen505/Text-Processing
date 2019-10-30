@@ -34,4 +34,29 @@ if '-l' not in opts:
 
 ################################################################
 
+for word in open(sys.argv[1],'r'):
+    word_lower = word.lower()    
+    
+def countWords(x):
+    dict_ = dict()
+    stopword = readStopWords()
+    
+    for word in x.read().split():
+        word = word.lower()
+        if word in stopword:
+            continue
+        else:
+            if word not in dict_:
+                dict_[word] = 1
+            else:
+                dict_[word] += 1 
+                
+    
+    return dict_
+
+def readStopWords():
+    stop = []
+    for word in open(sys.argv[2],'r').read().split():
+        stop.append(word)
+    return stop
 
