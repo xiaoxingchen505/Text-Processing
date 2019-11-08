@@ -62,6 +62,7 @@ with open(opts['-d']) as data_in:
                 wordTagCounts[wd][tag] += 1
             else:
                 wordTagCounts[wd][tag] = 1
+print(wordTagCounts['Active']['JJ'])
 print('<done>', file=sys.stderr)
 
 ################################################
